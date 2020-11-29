@@ -1,0 +1,152 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+body nav form{
+  margin: 1%;
+  top: 10%;
+  padding: 0%;
+  border: 0px;
+}
+body form {
+  border: 3px solid;
+  margin: 1%;
+  top: 10%;
+  padding: 3%;
+
+}
+#fomLog{
+  border: 170px solid;
+  margin: 1%;
+  padding: 3%;
+  
+}
+.fundos{
+  background-image: url(../static/img/fundoInicio.png);
+  height: 90vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  align-items: center;
+}
+body header{
+  height: 70%;
+  width: 60%;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+
+}
+.tela {
+  background-image: url(../static/img/fundoInicio.png);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-block-end: 1px solid;
+  
+}
+.telaQuemSomos{
+  background-image: url(./im/telaQuemSomos.png);
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0%;
+  text-align: center;
+
+}
+
+.estiloCadastro{
+  border: 5px solid black;
+  width: 50%;
+  height: 50vh;
+  text-align: center;
+  padding: 1%;
+  position: absolute;
+  top: 25vh;
+  left: 45vh;
+}
+.telaLogin{
+  background-image: url(../static/img/fundoLogin1.png);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  top: 20vh;
+  margin: 0%;
+}
+
+.contato {
+  height: 20vh;
+  border: 1px solid;
+  border-color: #b9bbbe;
+  background-color: white;
+  margin: 0%;
+  background-size: cover;
+  position: absolute;
+  left: 40%;
+}
+
+.botaoCaminho1{
+  background-color: white;
+  color: black;
+  border: 2px solid #000000;
+  width: 35vh;
+  height: 12vh;
+  font-size: 7vh;
+  text-align: center;
+  position: relative;
+  top: 55%;
+  left: 30%;
+  margin: 2%;
+  border-radius: 10%;
+}
+
+.fundoCaminho{
+  background-image: url(../static/img/fundoCaminho.png);
+  height: 91vh;
+  color: black;
+}
+.textoCaminho{
+  border: 1px solid;
+  height: 33vh;
+  border: 1px solid;
+  width: 95%;
+  left: 2.5%;
+  padding: 1.5%;
+  text-align: justify;
+  position: absolute;
+  background-color: white;
+  top: 10%;
+}
+#doacao{
+  margin: 5%;
+  
+}
+
+@media only screen and (max-width: 600px) {
+  .bloco{
+    height: 60vh;
+    width: 50vh;
+    border: 1px solid black;
+    left: 2.5vh;
+  }
+  
+  .botaoCaminho1{
+    font-size: 90%;
+    height: 10vh;
+    width: 30vh;
+    top: 40%;
+    left:0px;
+  }
+  .fundoCaminho{
+    position: relative;
+
+  }
+  .tela{
+    position: relative;
+    
+  }
+
+}

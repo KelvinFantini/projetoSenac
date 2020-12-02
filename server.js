@@ -2,7 +2,6 @@
 
     const express = require("express")
     const app = express()
-    SADLUPHFASNDIFHASDOFIJSDFKDFNSADÇLF,ASMFD,.SA FDSIOFASUD
 
     const handlebars = require("express-handlebars")
     const bodyParser = require("body-parser")

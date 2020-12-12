@@ -9,3 +9,5 @@ module.exports = {
     Sequelize: Sequelize,
     sequelize: sequelize 
 }
+
+//Aqui está conectando ao banco de dados "projeto1" utilizando a framework sequelize!

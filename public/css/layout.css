@@ -29,7 +29,7 @@ body header{
 }
 
 .tela {
-  background-image: url(./img/fundoSite.png);
+  background-image: url(./ig/fundoSite.png);
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -72,6 +72,16 @@ body header{
   margin: 0.5%;
   left: 18vh;
       
+}
+
+#formularioCadastro{
+  text-align: center;
+  position: relative;
+  top: 15%;
+}
+
+body form input{
+  background-color: white!important;
 }
 
 .formularioLogin{

@@ -41,7 +41,7 @@
             senha:req.body.senha,
             email:req.body.email,
         }).then(function(){
-            usuario.findAll().then(function(doadores){
+            usuario.findAll().then (function(doadores){
             res.render("formulario",{doador:doadores.map(pagamento => pagamento.toJSON())})
             })
              
@@ -68,9 +68,11 @@
         }).catch(function(erro){
             res.send("Erro "+erro)
         })
+        //catch significa que se deu errado ele mostra o erro
+        //then significa que se executou o que era pra fazer anteriormente ele executa mais o .then
     })
 
-    //Aqui estão todas as rotas do site 
+    //Aqui estão todas as rotas do E xpress 
 
     app.get('/',function(req,res){
         res.render("index")
@@ -99,6 +101,8 @@
         //Esta rota é reponsável pela página onde as ONGs cadastram a doação que precisam!
     })
 
+
+
     //Aqui está a porta na qual está rodando o servidor
 
     app.get('/delete/:id', function(req,res){
@@ -111,6 +115,25 @@
         }).catch(function(){res.send("Não deu certo")})
     });
 
+    app.get('/update/:id', function(req,res){
+        usuario.findAll({where:{'id' : req.params.id}}).then(function(doadores){
+            res.render("atualiza",{doador:doadores.map(pagamento => pagamento.toJSON())})  
+        })
+    })
+
+    app.post('/updateUsuario', function(req,res){
+        usuario.update({
+            nome:req.body.nome,
+            senha:req.body.senha},
+            {where:{id:req.body.codigo}}).then(function(){
+            usuario.findAll().then(function(doadores){
+                res.render("formulario",{doador:doadores.map(pagamento => pagamento.toJSON())})
+            })
+        }).catch(function(erro){
+            res.send("Erro "+erro)})
+    });
+        //catch significa que se deu errado ele mostra o erro
+        //then significa que se executou o que era pra fazer anteriormente ele executa mais o .then
 
     app.listen(3000);
 

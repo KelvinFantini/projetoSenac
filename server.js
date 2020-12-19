@@ -125,7 +125,7 @@
         usuario.update({
             nome:req.body.nome,
             senha:req.body.senha},
-            {where:{id:req.body.codigo}}).then(function(){
+            {where:{id:req.body.id}}).then(function(){
             usuario.findAll().then(function(doadores){
                 res.render("formulario",{doador:doadores.map(pagamento => pagamento.toJSON())})
             })

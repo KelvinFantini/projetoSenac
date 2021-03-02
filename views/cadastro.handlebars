@@ -1,62 +1,100 @@
   
   <!--Nesta página será feito os cadastros de pessoa juídica e física-->
-  
-  <form action="/cadOng" method="POST" id="formularioCadastro">
+<div class="container-fluid formularioCadastro">
+  <form action="/cadastroUser" method="POST" onsubmit= "confirmarDelecao(event, this)" >
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputEmail4">Email</label>
         <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
       </div>
       <div class="form-group col-md-6">
-      <label for="inputAddress">Nome</label>
-      <input type="text" name="nome" class="form-control" id="inputAddress" placeholder="Nome/nome da ONG">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputAddress">Endereço</label>
-      <input type="text" name="endereco" class="form-control" id="inputAddress" placeholder="Rua, Bairro, nº 0">
-    </div>
-      <div class="form-group col-md-6">
-        <label for="inputPassword4">Senha</label>
-        <input type="password" name="senha" class="form-control" id="inputPassword4" placeholder="Senha">
+        <label for="inputAddress">Nome</label>
+        <input type="text" name="nome" class="form-control" id="inputAddress" placeholder="Nome/nome da ONG">
       </div>
-    </div>
-    <div class="form-group">
-      <label for="inputAddress2">Complemento</label>
-      <input type="text" name="complemento" class="form-control" id="inputAddress2"
-        placeholder="Apartamento, hotel, casa, referência, etc.">
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
+        <label for="inputAddress">Endereço</label>
+        <input type="text" name="endereco" class="form-control" id="inputAddress" placeholder="Rua, Bairro, nº 0">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Senha</label>
+        <input type="text" name="senha" class="form-control" id="inputPassword4" placeholder="Senha">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputAddress2">Complemento</label>
+        <input type="text" name="complemento" class="form-control" id="inputAddress2"
+          placeholder="Apartamento, hotel, casa, referência, etc.">
+      </div>
+      <div class="form-group col-md-5">
+        <label for="inputAddress2">CNPJ</label>
+        <input type="number" name="cnpj" pattern="" class="form-control" id="inputAddress2"
+          placeholder="Preencha com o CNPJ se for uma ONG">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputEstado">Tipo</label>
+        <select id="inputEstado" name="tipo" class="form-control">
+          <option value="">...</option>
+          <option value="pf">Pessoa Física/Doador</option>
+          <option value = "pj" >Pessoa Jurídica/ONG</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-3">
         <label for="inputCity">Cidade</label>
         <input type="text" name="cidade" class="form-control" id="inputCity">
-      </div>
+    </div>
       <div class="form-group col-md-4">
         <label for="inputEstado">Estado</label>
         <select id="inputEstado" name="estado" class="form-control">
-          <option selected>Escolher...</option>
-          <option>RS</option>
-          <option>SC</option>
-          <option>SP</option>
-          <option>PR</option>
-          <option>MG</option>
-          <option>RJ</option>
-          <option>MT</option>
-          <option>DF</option>
+          <option value="">...</option>
+          <option value="rs">RS</option>
+          <option value="sc">SC</option>
+          <option value="sp">SP</option>
+          <option value="pr">PR</option>
+          <option value="mg">MG</option>
+          <option value="rj">RJ</option>
+          <option value="mt">MT</option>
+          <option value="df">DF</option>
         </select>
       </div>
       <div class="form-group col-md-2">
         <label for="inputCEP">CEP</label>
         <input type="text" name="cep" pattern="\d{5}-?\d{3}" class="form-control" id="inputCEP" placeholder="*****-**">
       </div>
+      <div class="form-group col-md-3">
+        <label for="inputEstado">Situação</label>
+            <select id="inputEstado" name="situacao" class="form-control">
+              <option value="">...</option>
+              <option value="ativo">Ativo</option>
+              <option value="inativo">Inativo</option>
+            </select>
+      </div>
     </div>
-    <div class="form-group">
+    <div class="form-group botCad1">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck">
         <label class="form-check-label" for="gridCheck">
           Aceito a política de privacidade
         </label>
+        <br>
+        <br>
+        <a href="">POLÍTICA DE PRIVACIDADE</a>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Entrar</button>
+    <button type="submit" class="btn btn-primary botCad" >Entrar</button>
   </form>
 
+  <script>
+      function confirmarDelecao(event, form){
+          event.preventDefault();
+          var decision = confirm("Tem certeza que deseja enviar?")
+          if(decision){
+              form.submit();
+          }
+      }
+  </script>
+</div> 

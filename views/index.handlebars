@@ -1,65 +1,92 @@
 <!--Nesta página localiza-se o carrosel de imagens da página inicial e as doações que estão abaixo-->
 
-<div class="tela">
-  <header>
-    <div id="carouselExampleControls" class="carousel slide slideDoacao" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-interval ="500">
-          <img class="d-block w-100"  src="static/img/fundoLogin.png" alt="First slide">
-        </div>
-        <div class="carousel-item" data-interval ="500">
-          <img class="d-block w-100" src="static/img/fundoSite.png" alt="Second slide">
-        </div>
-        <div class="carousel-item" data-interval ="500">
-          <img class="d-block w-100" src="static/img/telaQuemSomos.png" alt="Third slide">
-        </div>
-        <div class="carousel-item" data-interval ="500">
-          <img class="d-block w-100" src="static/img/telaQuemSomos.png" alt="Four slide">
-        </div>
-        <div class="carousel-item" data-interval ="500">
-          <img class="d-block w-100" src="static/img/de.jpg" alt="FIVE slide">
-        </div>
-        <div class="carousel-item" data-interval ="500">
-          <img class="d-block w-100" src="static/img/do.jpg" alt="Six slide">
+<body class="conteiner-fluid">
+  <div class="tela">
+    <header>
+       {{#each doadores11}}
+      <div id="carouselExampleControls" class="carousel slide slideDoacao" data-ride="carousel" >
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-interval="500">
+           
+              <div class="">
+                <div class="card text-center">
+                  <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="true" href="#">Active</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Produtos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contatos</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card mb-3" style="max-width: 540px; max-height: 220px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="/static/img1/{{foto}}" style="max-width: 200px; max-height: 150px;">
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card-body">
+                          <h5 class="card-title">{{nome}}</h5>
+                          <h5 class="card-title">{{titulo}}</h5>
+                          <p class="card-text">{{descricao}}</p>
+                          <p class="card-text"><small class="text-muted">{{createdAt}}</small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        {{/each}}
+      </div>
+          </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+    </header>
+  </div>
+  </div>
+</body>
+
+
+<!--<div clas="col-4">
+      <div class="card">
+        <img src="/static/img1/{{foto}}" class=" imgDoacao" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{titulo}}</h5>
+          <p class="card-text"> {{descricao}}</p>
+          <p class="card-text"><small class="text-muted">{{createdAt}}</small></p>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </header>
-</div>
+    </div>-->
 
-<!--Aqui está o local da página onde está as doações-->
+      <!--Aqui está o local da página onde está as doações-->
 
-<div id="doacao" class="row">
-  <div class="col-md-3 bloco">
-    Nestes blocos ficarão as doações.
-  
-  </div>
-  <div class="col-md-3 bloco">
-    Nestes blocos ficarão as doações.
-
-  </div>
-  <div class="col-md-3 bloco">
-    Nestes blocos ficarão as doações.
-
-  </div>
-  <div class="col-md-3 bloco">
-    Nestes blocos ficarão as doações.
-
-  </div>
-  <div class="col-md-3 bloco">
-    Nestes blocos ficarão as doações.
-
-  </div>
-  <div class="col-md-3 bloco">
-    Nestes blocos ficarão as doações.
-  </div>
-
-</div>
+  <!--<div class="col-md-3 bloco">
+        <table class="table">
+          <tr>
+              <th>Nome</th>
+              <th>Senha</th>
+              <th>Atualizar</th>
+              <th>Excluir</th>
+          </tr>
+          {{#each doador}}
+              <tr>
+                  <td>{{nome}}</td>
+                  <td>{{senha}}</td>
+                  <td><a href="/update/{{id}}">Modificar</a></td>
+                  <td><a href="/delete/{{id}}">Apagar</a></td>
+              </tr>
+          {{/each}}
+        </table>
+    
+      </div>-->

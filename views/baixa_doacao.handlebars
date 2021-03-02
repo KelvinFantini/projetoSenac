@@ -1,0 +1,33 @@
+
+    <table class="table">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Foto
+            </th>
+            <th>
+                Nome
+            </th>
+            <th>
+                Descrição
+            </th>
+        </tr>
+{{#each doadores11}}
+        <tr>            
+            <td> {{id}} </td>
+            <td><img src="/static/img1/{{foto}}" style="max-width: 40%;
+            max-height:30%;"></td>
+            <td> {{nome}} </td>
+            <td> {{descricao}} </td>
+            <td><a href="/update1/{{id}}">Modificar</a></td><br>
+            <td><a href="/delete1/{{id}}">Apagar</a></td>
+        </tr>
+{{/each}}
+
+    </table>
+
+<!-- No dia 27-01, modifiquei a ideia de como a Ong vai ter acesso para modificar o perfil, criei um novo campo em 
+cadastro, mas não arrumei pra funcionar-->
+

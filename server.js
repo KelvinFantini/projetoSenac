@@ -203,7 +203,7 @@
     })
      
 
-    app.get('/login/formPedido', function(req,res){
+    app.get('/formPedido', function(req,res){
         if(req.session.email){
             usuario.findAll({where:{'email' : req.session.email}}).then(function(doadores){
                 res.render("formDoacao",{doador:doadores.map(pagamento => pagamento.toJSON())})
@@ -257,10 +257,15 @@
     
 
     app.get('/update1/:id', function(req,res){
-        doacao.findAll({where:{ 'email_doador' : req.session.email}}).then(function(doacoess){
+        if(req.session.email){
+            doacao.findAll({where:{'email_doador':req.session.email}, where:{'id': req.params.id}}).then(function(doacoess){
             res.render("modificarDoacao",{doadores11:doacoess.map(pagamento11 => pagamento11.toJSON())})
             
-        }) //Update de doação e de todos os campos do formulário de doação 
+        })
+     }else {
+        res.render("formulario")
+     } 
+     //Update de doação e de todos os campos do formulário de doação 
     });
 
     app.post('/updateDoacao1', function(req,res){
@@ -294,9 +299,9 @@
             res.send("Erro "+erro)})
     });
 
-    app.get('/login/baixaDoacao',function(req,res){
+    app.get('/baixaDoacao',function(req,res){
     if(req.session.email){
-        doacao.findAll().then(function(doacoess){
+        doacao.findAll({where:{'email_doador':req.session.email}}).then(function(doacoess){
             res.render("baixa_doacao",{doadores11:doacoess.map(pagamento11 => pagamento11.toJSON())})
         })
         //Nesta rota renderiza a página de login do site

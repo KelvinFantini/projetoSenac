@@ -69,13 +69,15 @@ body header{
       
 }
 
-.formularioCadastro{
+ .formularioCadastro{
   background-image: url(/static/img/cadastre-se.png );
   height: 90.5vh;
   width: auto;
   background-repeat: no-repeat;
   background-size: cover;
   color: aliceblue !important;
+  top: 10% !important;
+  position: relative !important;
 }
 
 .botCad{

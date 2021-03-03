@@ -19,8 +19,8 @@
         port: 587,
         secure: false, 
         auth: {
-            user: "testekelvin1@gmail.com",
-            pass: "35820058a"
+            user: "",
+            pass: ""
         },
         tls: { rejectUnauthorized: false}
     });
